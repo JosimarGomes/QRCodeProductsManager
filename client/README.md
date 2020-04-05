@@ -16,3 +16,4 @@ Para esse projeto, não utilizamos nenhuma biblioteca de terceiro para component
 ## Melhorias
 * Tratamentos de erros
 * Testes unitários
+* Criação de layout responsivo
