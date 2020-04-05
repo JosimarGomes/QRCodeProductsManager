@@ -1,0 +1,12 @@
+{
+  "name": "productqrcodeviewer",
+  "version": "1.0.0",
+  "description": "Product QRCode viewer application web",
+  "main": "index.js",
+  "scripts": {
+    "install-dependencies": "npm install && cd api && npm install && cd ../client && npm install",
+    "dev": "concurrently \"cd api && npm run server\" \"cd client && npm run start\""
+  },
+  "author": "Josimar Gomes",
+  "license": "ISC"
+}
