@@ -21,6 +21,7 @@ import { TagDefault } from 'design-system/components/Tag';
 import { ButtonDefault } from 'design-system/components/Button';
 import generateSerialCode from 'libs/serialCode';
 import { loadProducts } from 'redux/reducers/products';
+import { currencyToFormPtBr, ptBrToCurrencyNumber } from 'utils/currency';
 
 
 function ProductFormModal({ handlerVisibility, visible, editValues, titleForm, loadProducts }) {
@@ -31,6 +32,7 @@ function ProductFormModal({ handlerVisibility, visible, editValues, titleForm, l
 
     useEffect(() => {
         if(editValues) {
+            editValues.value = currencyToFormPtBr(editValues.value);
             setValues(editValues);
         }
 
@@ -40,12 +42,20 @@ function ProductFormModal({ handlerVisibility, visible, editValues, titleForm, l
         setValues({ ...values, [fieldName]: value });
     }
 
+    function formateInputValues(inputsValues) {
+        const formatedValues = inputsValues;
+        formatedValues.value = ptBrToCurrencyNumber(inputsValues.value);
+
+        return formatedValues;
+    }
     
     async function onSubmit() {
         setLoading(true);
+
+        const formatedValues = formateInputValues(values);
         
         try {
-            await Api.put('/products', values);
+            await Api.put('/products', formatedValues);
             
             loadProducts();
 
