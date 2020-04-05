@@ -8,5 +8,8 @@
     "dev": "concurrently \"cd api && npm run server\" \"cd client && npm run start\""
   },
   "author": "Josimar Gomes",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.1.0"
+  }
 }
