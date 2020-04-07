@@ -2,9 +2,12 @@ import express, { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 
-import { ServerInterface } from 'adapters';
+import {
+    ServerInterface,
+    HttpRequest,
+    HttpResponse
+} from 'adapters';
 import { RouteApp } from 'types';
-import { HttpRequest, HttpResponse } from 'adapters';
 import ExpressHttpResponseAdapter from './express-http-response';
 
 

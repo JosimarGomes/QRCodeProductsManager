@@ -4,7 +4,9 @@
   "description": "Product QRCode viewer application web",
   "scripts": {
     "install-dependencies": "npm install && cd api && npm install && cd ../client && npm install",
-    "dev": "concurrently \"cd api && npm run server\" \"cd client && npm run start\""
+    "dev": "concurrently \"cd api && npm run server\" \"cd client && npm run start\"",
+    "start": "concurrently \"cd api && npm run start:production\" \"cd client && npm run start:production\"",
+    "build": "cd api && npm run build && cd ../client && npm run build"
   },
   "author": "Josimar Gomes",
   "license": "ISC",
