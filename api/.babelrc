@@ -4,7 +4,7 @@
         "@babel/typescript"
     ],
     "plugins": [
-        ["module-resolver", {
+        ["babel-plugin-module-resolver", {
             "root": ["./dist"],
             "alias": {
                 "adapters": "./dist/adapters",
@@ -14,7 +14,7 @@
                 "rabbit": "./dist/rabbit",
                 "repositories": "./dist/repositories",
                 "types": "./dist/types",
-                "webserver": "./dist/webserver",
+                "webserver": "./dist/webserver"
             }
         }],
         "@babel/proposal-class-properties",
