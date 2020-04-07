@@ -5,16 +5,16 @@
     ],
     "plugins": [
         ["module-resolver", {
-            "root": ["./src"],
+            "root": ["./dist"],
             "alias": {
-                "adapters": "./src/adapters",
-                "domain": "./src/domain",
-                "errors": "./src/errors",
-                "infrastructure": "./src/infrastructure",
-                "rabbit": "./src/rabbit",
-                "repositories": "./src/repositories",
-                "types": "./src/types",
-                "webserver": "./src/webserver"
+                "adapters": "./dist/adapters",
+                "domain": "./dist/domain",
+                "errors": "./dist/errors",
+                "infrastructure": "./dist/infrastructure",
+                "rabbit": "./dist/rabbit",
+                "repositories": "./dist/repositories",
+                "types": "./dist/types",
+                "webserver": "./dist/webserver",
             }
         }],
         "@babel/proposal-class-properties",
