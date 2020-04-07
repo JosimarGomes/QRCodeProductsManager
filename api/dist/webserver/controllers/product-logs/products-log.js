@@ -1,19 +1,37 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-class ProductLogController {
-    constructor(productLogUseCase) {
-        this.index = (httpRequest, httpResponse) => {
-            const { productId, userId } = httpRequest.query;
-            let productLogs = [];
-            if (productId) {
-                productLogs = this.productLogUseCase.getProductLogsbyProduct(productId);
-            }
-            else if (userId) {
-                productLogs = this.productLogUseCase.getProductLogsByUser(userId);
-            }
-            return httpResponse.send(productLogs);
-        };
-        this.productLogUseCase = productLogUseCase;
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+
+var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
+
+var ProductLogController = function ProductLogController(productLogUseCase) {
+  var _this = this;
+
+  (0, _classCallCheck2["default"])(this, ProductLogController);
+  (0, _defineProperty2["default"])(this, "productLogUseCase", void 0);
+  (0, _defineProperty2["default"])(this, "index", function (httpRequest, httpResponse) {
+    var _httpRequest$query = httpRequest.query,
+        productId = _httpRequest$query.productId,
+        userId = _httpRequest$query.userId;
+    var productLogs = [];
+
+    if (productId) {
+      productLogs = _this.productLogUseCase.getProductLogsbyProduct(productId);
+    } else if (userId) {
+      productLogs = _this.productLogUseCase.getProductLogsByUser(userId);
     }
-}
-exports.default = ProductLogController;
+
+    return httpResponse.send(productLogs);
+  });
+  this.productLogUseCase = productLogUseCase;
+};
+
+exports["default"] = ProductLogController;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL3NyYy93ZWJzZXJ2ZXIvY29udHJvbGxlcnMvcHJvZHVjdC1sb2dzL3Byb2R1Y3RzLWxvZy50cyJdLCJuYW1lcyI6WyJQcm9kdWN0TG9nQ29udHJvbGxlciIsInByb2R1Y3RMb2dVc2VDYXNlIiwiaHR0cFJlcXVlc3QiLCJodHRwUmVzcG9uc2UiLCJxdWVyeSIsInByb2R1Y3RJZCIsInVzZXJJZCIsInByb2R1Y3RMb2dzIiwiZ2V0UHJvZHVjdExvZ3NieVByb2R1Y3QiLCJnZXRQcm9kdWN0TG9nc0J5VXNlciIsInNlbmQiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7SUFHcUJBLG9CLEdBSWpCLDhCQUFZQyxpQkFBWixFQUFrRDtBQUFBOztBQUFBO0FBQUE7QUFBQSxrREFJbkMsVUFBQ0MsV0FBRCxFQUEyQkMsWUFBM0IsRUFDZTtBQUFBLDZCQUVJRCxXQUFXLENBQUNFLEtBRmhCO0FBQUEsUUFFbEJDLFNBRmtCLHNCQUVsQkEsU0FGa0I7QUFBQSxRQUVQQyxNQUZPLHNCQUVQQSxNQUZPO0FBSTFCLFFBQUlDLFdBQVcsR0FBRyxFQUFsQjs7QUFFQSxRQUFJRixTQUFKLEVBQWU7QUFDWEUsTUFBQUEsV0FBVyxHQUFHLEtBQUksQ0FBQ04saUJBQUwsQ0FBdUJPLHVCQUF2QixDQUErQ0gsU0FBL0MsQ0FBZDtBQUNILEtBRkQsTUFFTyxJQUFHQyxNQUFILEVBQVc7QUFDZEMsTUFBQUEsV0FBVyxHQUFHLEtBQUksQ0FBQ04saUJBQUwsQ0FBdUJRLG9CQUF2QixDQUE0Q0gsTUFBNUMsQ0FBZDtBQUNIOztBQUVELFdBQU9ILFlBQVksQ0FBQ08sSUFBYixDQUFrQkgsV0FBbEIsQ0FBUDtBQUNILEdBbEJpRDtBQUM5QyxPQUFLTixpQkFBTCxHQUF5QkEsaUJBQXpCO0FBQ0gsQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IEh0dHBSZXF1ZXN0LCBIdHRwUmVzcG9uc2UgfSBmcm9tICdhZGFwdGVycyc7XG5pbXBvcnQgUHJvZHVjdExvZ1VzZUNhc2UgZnJvbSAnZG9tYWluL3VzZUNhc2VzL3Byb2R1Y3QtbG9nJztcblxuZXhwb3J0IGRlZmF1bHQgY2xhc3MgUHJvZHVjdExvZ0NvbnRyb2xsZXIge1xuXG4gICAgcHJpdmF0ZSBwcm9kdWN0TG9nVXNlQ2FzZTogUHJvZHVjdExvZ1VzZUNhc2VcblxuICAgIGNvbnN0cnVjdG9yKHByb2R1Y3RMb2dVc2VDYXNlOiBQcm9kdWN0TG9nVXNlQ2FzZSkge1xuICAgICAgICB0aGlzLnByb2R1Y3RMb2dVc2VDYXNlID0gcHJvZHVjdExvZ1VzZUNhc2VcbiAgICB9XG5cbiAgICBwdWJsaWMgaW5kZXggPSAoaHR0cFJlcXVlc3Q6IEh0dHBSZXF1ZXN0LCBodHRwUmVzcG9uc2U6IEh0dHBSZXNwb25zZSlcbiAgICAgICAgOlByb21pc2U8SHR0cFJlc3BvbnNlPiA9PiB7XG5cbiAgICAgICAgY29uc3QgeyBwcm9kdWN0SWQsIHVzZXJJZCB9ID0gaHR0cFJlcXVlc3QucXVlcnk7IFxuICAgICAgICBcbiAgICAgICAgbGV0IHByb2R1Y3RMb2dzID0gW107XG5cbiAgICAgICAgaWYgKHByb2R1Y3RJZCkge1xuICAgICAgICAgICAgcHJvZHVjdExvZ3MgPSB0aGlzLnByb2R1Y3RMb2dVc2VDYXNlLmdldFByb2R1Y3RMb2dzYnlQcm9kdWN0KHByb2R1Y3RJZCk7XG4gICAgICAgIH0gZWxzZSBpZih1c2VySWQpIHtcbiAgICAgICAgICAgIHByb2R1Y3RMb2dzID0gdGhpcy5wcm9kdWN0TG9nVXNlQ2FzZS5nZXRQcm9kdWN0TG9nc0J5VXNlcih1c2VySWQpO1xuICAgICAgICB9XG5cbiAgICAgICAgcmV0dXJuIGh0dHBSZXNwb25zZS5zZW5kKHByb2R1Y3RMb2dzKTtcbiAgICB9XG59Il19

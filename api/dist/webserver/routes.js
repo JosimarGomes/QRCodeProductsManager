@@ -1,37 +1,39 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const composer_1 = __importDefault(require("webserver/controllers/products/composer"));
-const compose_1 = __importDefault(require("webserver/controllers/product-logs/compose"));
-const productController = composer_1.default();
-const productLogController = compose_1.default();
-const RoutesApp = [
-    {
-        method: 'PUT',
-        path: '/api/v1/products',
-        handler: productController.createOrUpdate
-    },
-    {
-        method: 'GET',
-        path: '/api/v1/products',
-        handler: productController.index
-    },
-    {
-        method: 'GET',
-        path: '/api/v1/products/:id',
-        handler: productController.getById
-    },
-    {
-        method: 'DELETE',
-        path: '/api/v1/products/:id',
-        handler: productController.deleteById
-    },
-    {
-        method: 'GET',
-        path: '/api/v1/product-logs',
-        handler: productLogController.index
-    }
-];
-exports.default = RoutesApp;
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _composer = _interopRequireDefault(require("./controllers/products/composer"));
+
+var _compose = _interopRequireDefault(require("./controllers/product-logs/compose"));
+
+var productController = (0, _composer["default"])();
+var productLogController = (0, _compose["default"])();
+var RoutesApp = [{
+  method: 'PUT',
+  path: '/api/v1/products',
+  handler: productController.createOrUpdate
+}, {
+  method: 'GET',
+  path: '/api/v1/products',
+  handler: productController.index
+}, {
+  method: 'GET',
+  path: '/api/v1/products/:id',
+  handler: productController.getById
+}, {
+  method: 'DELETE',
+  path: '/api/v1/products/:id',
+  handler: productController.deleteById
+}, {
+  method: 'GET',
+  path: '/api/v1/product-logs',
+  handler: productLogController.index
+}];
+var _default = RoutesApp;
+exports["default"] = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy93ZWJzZXJ2ZXIvcm91dGVzLnRzIl0sIm5hbWVzIjpbInByb2R1Y3RDb250cm9sbGVyIiwicHJvZHVjdExvZ0NvbnRyb2xsZXIiLCJSb3V0ZXNBcHAiLCJtZXRob2QiLCJwYXRoIiwiaGFuZGxlciIsImNyZWF0ZU9yVXBkYXRlIiwiaW5kZXgiLCJnZXRCeUlkIiwiZGVsZXRlQnlJZCJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7O0FBQUE7O0FBQ0E7O0FBRUEsSUFBTUEsaUJBQWlCLEdBQUcsMkJBQTFCO0FBQ0EsSUFBTUMsb0JBQW9CLEdBQUcsMEJBQTdCO0FBS0EsSUFBTUMsU0FBcUIsR0FBRyxDQUMxQjtBQUNJQyxFQUFBQSxNQUFNLEVBQUUsS0FEWjtBQUVJQyxFQUFBQSxJQUFJLEVBQUUsa0JBRlY7QUFHSUMsRUFBQUEsT0FBTyxFQUFFTCxpQkFBaUIsQ0FBQ007QUFIL0IsQ0FEMEIsRUFNMUI7QUFDSUgsRUFBQUEsTUFBTSxFQUFFLEtBRFo7QUFFSUMsRUFBQUEsSUFBSSxFQUFFLGtCQUZWO0FBR0lDLEVBQUFBLE9BQU8sRUFBRUwsaUJBQWlCLENBQUNPO0FBSC9CLENBTjBCLEVBVzFCO0FBQ0lKLEVBQUFBLE1BQU0sRUFBRSxLQURaO0FBRUlDLEVBQUFBLElBQUksRUFBRSxzQkFGVjtBQUdJQyxFQUFBQSxPQUFPLEVBQUVMLGlCQUFpQixDQUFDUTtBQUgvQixDQVgwQixFQWdCMUI7QUFDSUwsRUFBQUEsTUFBTSxFQUFFLFFBRFo7QUFFSUMsRUFBQUEsSUFBSSxFQUFFLHNCQUZWO0FBR0lDLEVBQUFBLE9BQU8sRUFBRUwsaUJBQWlCLENBQUNTO0FBSC9CLENBaEIwQixFQXFCMUI7QUFDSU4sRUFBQUEsTUFBTSxFQUFFLEtBRFo7QUFFSUMsRUFBQUEsSUFBSSxFQUFFLHNCQUZWO0FBR0lDLEVBQUFBLE9BQU8sRUFBRUosb0JBQW9CLENBQUNNO0FBSGxDLENBckIwQixDQUE5QjtlQTRCZUwsUyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBjb21wb3NlclByb2R1Y3RzIGZyb20gJ3dlYnNlcnZlci9jb250cm9sbGVycy9wcm9kdWN0cy9jb21wb3Nlcic7XG5pbXBvcnQgY29tcG9zZVByb2R1Y3RMb2dzIGZyb20gJ3dlYnNlcnZlci9jb250cm9sbGVycy9wcm9kdWN0LWxvZ3MvY29tcG9zZSc7XG5cbmNvbnN0IHByb2R1Y3RDb250cm9sbGVyID0gY29tcG9zZXJQcm9kdWN0cygpO1xuY29uc3QgcHJvZHVjdExvZ0NvbnRyb2xsZXIgPSBjb21wb3NlUHJvZHVjdExvZ3MoKTtcblxuXG5pbXBvcnQgeyBSb3V0ZUFwcCB9IGZyb20gJ3R5cGVzJztcblxuY29uc3QgUm91dGVzQXBwOiBSb3V0ZUFwcFtdID0gW1xuICAgIHtcbiAgICAgICAgbWV0aG9kOiAnUFVUJyxcbiAgICAgICAgcGF0aDogJy9hcGkvdjEvcHJvZHVjdHMnLFxuICAgICAgICBoYW5kbGVyOiBwcm9kdWN0Q29udHJvbGxlci5jcmVhdGVPclVwZGF0ZVxuICAgIH0sXG4gICAge1xuICAgICAgICBtZXRob2Q6ICdHRVQnLFxuICAgICAgICBwYXRoOiAnL2FwaS92MS9wcm9kdWN0cycsXG4gICAgICAgIGhhbmRsZXI6IHByb2R1Y3RDb250cm9sbGVyLmluZGV4XG4gICAgfSxcbiAgICB7XG4gICAgICAgIG1ldGhvZDogJ0dFVCcsXG4gICAgICAgIHBhdGg6ICcvYXBpL3YxL3Byb2R1Y3RzLzppZCcsXG4gICAgICAgIGhhbmRsZXI6IHByb2R1Y3RDb250cm9sbGVyLmdldEJ5SWRcbiAgICB9LFxuICAgIHtcbiAgICAgICAgbWV0aG9kOiAnREVMRVRFJyxcbiAgICAgICAgcGF0aDogJy9hcGkvdjEvcHJvZHVjdHMvOmlkJyxcbiAgICAgICAgaGFuZGxlcjogcHJvZHVjdENvbnRyb2xsZXIuZGVsZXRlQnlJZFxuICAgIH0sXG4gICAge1xuICAgICAgICBtZXRob2Q6ICdHRVQnLFxuICAgICAgICBwYXRoOiAnL2FwaS92MS9wcm9kdWN0LWxvZ3MnLFxuICAgICAgICBoYW5kbGVyOiBwcm9kdWN0TG9nQ29udHJvbGxlci5pbmRleFxuICAgIH1cbl07XG5cbmV4cG9ydCBkZWZhdWx0IFJvdXRlc0FwcDsiXX0=
