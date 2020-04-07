@@ -1,57 +1,63 @@
 "use strict";
-
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.products_log = exports.products = void 0;
-
-var _product = _interopRequireDefault(require("../../../domain/entities/product"));
-
-var _productLog = _interopRequireDefault(require("../../../domain/entities/product-log"));
-
-var products = [new _product["default"]({
-  id: 1,
-  name: 'Notebook Dell',
-  description: 'Dell, core i5, 16GB RAM',
-  value: 1800.00,
-  serialCodes: [12345678, 3434534534, 909980, 89898989898]
-}), new _product["default"]({
-  id: 2,
-  name: 'Celular Motorolla MotoG5',
-  description: '2Gb Ram, 32Hd, Câmera 14mpx, Netflix',
-  value: 849.99,
-  serialCodes: [1234567890, 9934534534]
-})];
-exports.products = products;
-var products_log = [new _productLog["default"]({
-  id: 34,
-  productId: 1,
-  userId: 'josue',
-  date: new Date(),
-  productName: 'Notebook Dell',
-  serialCode: 3345435435,
-  productDescription: 'Dell, core i5, 16GB RAM',
-  productValue: 899.99
-}), new _productLog["default"]({
-  id: 35,
-  productId: 1,
-  userId: 'manoelsouza',
-  date: new Date(),
-  productName: 'Notebook Dell',
-  serialCode: 3243434222,
-  productValue: 3999.89,
-  productDescription: 'Dell, core i5, 16GB RAM'
-}), new _productLog["default"]({
-  id: 35,
-  productId: 2,
-  userId: 'josue',
-  date: new Date(),
-  productName: 'Celular Motorolla MotoG5',
-  serialCode: 89797973498,
-  productDescription: '2Gb Ram, 32Hd, Câmera 14mpx, Netflix',
-  productValue: 2899.99
-})];
-exports.products_log = products_log;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL3NyYy9pbmZyYXN0cnVjdHVyZS9kYXRhYmFzZS9tZW1vcnkvZGF0YWJhc2UudHMiXSwibmFtZXMiOlsicHJvZHVjdHMiLCJQcm9kdWN0IiwiaWQiLCJuYW1lIiwiZGVzY3JpcHRpb24iLCJ2YWx1ZSIsInNlcmlhbENvZGVzIiwicHJvZHVjdHNfbG9nIiwiUHJvZHVjdExvZyIsInByb2R1Y3RJZCIsInVzZXJJZCIsImRhdGUiLCJEYXRlIiwicHJvZHVjdE5hbWUiLCJzZXJpYWxDb2RlIiwicHJvZHVjdERlc2NyaXB0aW9uIiwicHJvZHVjdFZhbHVlIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7QUFBQTs7QUFDQTs7QUFFTyxJQUFNQSxRQUFRLEdBQUcsQ0FDcEIsSUFBSUMsbUJBQUosQ0FBWTtBQUNSQyxFQUFBQSxFQUFFLEVBQUUsQ0FESTtBQUVSQyxFQUFBQSxJQUFJLEVBQUUsZUFGRTtBQUdSQyxFQUFBQSxXQUFXLEVBQUUseUJBSEw7QUFJUkMsRUFBQUEsS0FBSyxFQUFFLE9BSkM7QUFLUkMsRUFBQUEsV0FBVyxFQUFFLENBQ1QsUUFEUyxFQUVULFVBRlMsRUFHVCxNQUhTLEVBSVQsV0FKUztBQUxMLENBQVosQ0FEb0IsRUFhcEIsSUFBSUwsbUJBQUosQ0FBWTtBQUNSQyxFQUFBQSxFQUFFLEVBQUUsQ0FESTtBQUVSQyxFQUFBQSxJQUFJLEVBQUUsMEJBRkU7QUFHUkMsRUFBQUEsV0FBVyxFQUFFLHNDQUhMO0FBSVJDLEVBQUFBLEtBQUssRUFBRSxNQUpDO0FBS1JDLEVBQUFBLFdBQVcsRUFBRSxDQUNULFVBRFMsRUFFVCxVQUZTO0FBTEwsQ0FBWixDQWJvQixDQUFqQjs7QUF5QkEsSUFBTUMsWUFBWSxHQUFHLENBQ3hCLElBQUlDLHNCQUFKLENBQWU7QUFDWE4sRUFBQUEsRUFBRSxFQUFFLEVBRE87QUFFWE8sRUFBQUEsU0FBUyxFQUFFLENBRkE7QUFHWEMsRUFBQUEsTUFBTSxFQUFFLE9BSEc7QUFJWEMsRUFBQUEsSUFBSSxFQUFFLElBQUlDLElBQUosRUFKSztBQUtYQyxFQUFBQSxXQUFXLEVBQUUsZUFMRjtBQU1YQyxFQUFBQSxVQUFVLEVBQUUsVUFORDtBQU9YQyxFQUFBQSxrQkFBa0IsRUFBRSx5QkFQVDtBQVFYQyxFQUFBQSxZQUFZLEVBQUU7QUFSSCxDQUFmLENBRHdCLEVBV3hCLElBQUlSLHNCQUFKLENBQWU7QUFDWE4sRUFBQUEsRUFBRSxFQUFFLEVBRE87QUFFWE8sRUFBQUEsU0FBUyxFQUFFLENBRkE7QUFHWEMsRUFBQUEsTUFBTSxFQUFFLGFBSEc7QUFJWEMsRUFBQUEsSUFBSSxFQUFFLElBQUlDLElBQUosRUFKSztBQUtYQyxFQUFBQSxXQUFXLEVBQUUsZUFMRjtBQU1YQyxFQUFBQSxVQUFVLEVBQUUsVUFORDtBQU9YRSxFQUFBQSxZQUFZLEVBQUUsT0FQSDtBQVFYRCxFQUFBQSxrQkFBa0IsRUFBRTtBQVJULENBQWYsQ0FYd0IsRUFxQnhCLElBQUlQLHNCQUFKLENBQWU7QUFDWE4sRUFBQUEsRUFBRSxFQUFFLEVBRE87QUFFWE8sRUFBQUEsU0FBUyxFQUFFLENBRkE7QUFHWEMsRUFBQUEsTUFBTSxFQUFFLE9BSEc7QUFJWEMsRUFBQUEsSUFBSSxFQUFFLElBQUlDLElBQUosRUFKSztBQUtYQyxFQUFBQSxXQUFXLEVBQUUsMEJBTEY7QUFNWEMsRUFBQUEsVUFBVSxFQUFFLFdBTkQ7QUFPWEMsRUFBQUEsa0JBQWtCLEVBQUUsc0NBUFQ7QUFRWEMsRUFBQUEsWUFBWSxFQUFFO0FBUkgsQ0FBZixDQXJCd0IsQ0FBckIiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUHJvZHVjdCBmcm9tICdkb21haW4vZW50aXRpZXMvcHJvZHVjdCc7XG5pbXBvcnQgUHJvZHVjdExvZyBmcm9tICdkb21haW4vZW50aXRpZXMvcHJvZHVjdC1sb2cnO1xuXG5leHBvcnQgY29uc3QgcHJvZHVjdHMgPSBbXG4gICAgbmV3IFByb2R1Y3Qoe1xuICAgICAgICBpZDogMSxcbiAgICAgICAgbmFtZTogJ05vdGVib29rIERlbGwnLFxuICAgICAgICBkZXNjcmlwdGlvbjogJ0RlbGwsIGNvcmUgaTUsIDE2R0IgUkFNJyxcbiAgICAgICAgdmFsdWU6IDE4MDAuMDAsXG4gICAgICAgIHNlcmlhbENvZGVzOiBbXG4gICAgICAgICAgICAxMjM0NTY3OCxcbiAgICAgICAgICAgIDM0MzQ1MzQ1MzQsXG4gICAgICAgICAgICA5MDk5ODAsXG4gICAgICAgICAgICA4OTg5ODk4OTg5OFxuICAgICAgICBdXG4gICAgfSksXG4gICAgbmV3IFByb2R1Y3Qoe1xuICAgICAgICBpZDogMixcbiAgICAgICAgbmFtZTogJ0NlbHVsYXIgTW90b3JvbGxhIE1vdG9HNScsXG4gICAgICAgIGRlc2NyaXB0aW9uOiAnMkdiIFJhbSwgMzJIZCwgQ8OibWVyYSAxNG1weCwgTmV0ZmxpeCcsXG4gICAgICAgIHZhbHVlOiA4NDkuOTksXG4gICAgICAgIHNlcmlhbENvZGVzOiBbXG4gICAgICAgICAgICAxMjM0NTY3ODkwLFxuICAgICAgICAgICAgOTkzNDUzNDUzNFxuICAgICAgICBdXG4gICAgfSlcbl07XG5cbmV4cG9ydCBjb25zdCBwcm9kdWN0c19sb2cgPSBbXG4gICAgbmV3IFByb2R1Y3RMb2coe1xuICAgICAgICBpZDogMzQsXG4gICAgICAgIHByb2R1Y3RJZDogMSxcbiAgICAgICAgdXNlcklkOiAnam9zdWUnLFxuICAgICAgICBkYXRlOiBuZXcgRGF0ZSgpLFxuICAgICAgICBwcm9kdWN0TmFtZTogJ05vdGVib29rIERlbGwnLFxuICAgICAgICBzZXJpYWxDb2RlOiAzMzQ1NDM1NDM1LFxuICAgICAgICBwcm9kdWN0RGVzY3JpcHRpb246ICdEZWxsLCBjb3JlIGk1LCAxNkdCIFJBTScsXG4gICAgICAgIHByb2R1Y3RWYWx1ZTogODk5Ljk5XG4gICAgfSksXG4gICAgbmV3IFByb2R1Y3RMb2coe1xuICAgICAgICBpZDogMzUsXG4gICAgICAgIHByb2R1Y3RJZDogMSxcbiAgICAgICAgdXNlcklkOiAnbWFub2Vsc291emEnLFxuICAgICAgICBkYXRlOiBuZXcgRGF0ZSgpLFxuICAgICAgICBwcm9kdWN0TmFtZTogJ05vdGVib29rIERlbGwnLFxuICAgICAgICBzZXJpYWxDb2RlOiAzMjQzNDM0MjIyLFxuICAgICAgICBwcm9kdWN0VmFsdWU6IDM5OTkuODksXG4gICAgICAgIHByb2R1Y3REZXNjcmlwdGlvbjogJ0RlbGwsIGNvcmUgaTUsIDE2R0IgUkFNJ1xuICAgIH0pLFxuICAgIG5ldyBQcm9kdWN0TG9nKHtcbiAgICAgICAgaWQ6IDM1LFxuICAgICAgICBwcm9kdWN0SWQ6IDIsXG4gICAgICAgIHVzZXJJZDogJ2pvc3VlJyxcbiAgICAgICAgZGF0ZTogbmV3IERhdGUoKSxcbiAgICAgICAgcHJvZHVjdE5hbWU6ICdDZWx1bGFyIE1vdG9yb2xsYSBNb3RvRzUnLFxuICAgICAgICBzZXJpYWxDb2RlOiA4OTc5Nzk3MzQ5OCxcbiAgICAgICAgcHJvZHVjdERlc2NyaXB0aW9uOiAnMkdiIFJhbSwgMzJIZCwgQ8OibWVyYSAxNG1weCwgTmV0ZmxpeCcsXG4gICAgICAgIHByb2R1Y3RWYWx1ZTogMjg5OS45OVxuICAgIH0pXG5cbl0iXX0=
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const product_1 = __importDefault(require("domain/entities/product"));
+const product_log_1 = __importDefault(require("domain/entities/product-log"));
+exports.products = [
+    new product_1.default({
+        id: 1,
+        name: 'Notebook Dell',
+        description: 'Dell, core i5, 16GB RAM',
+        value: 1800.00,
+        serialCodes: [
+            12345678,
+            3434534534,
+            909980,
+            89898989898
+        ]
+    }),
+    new product_1.default({
+        id: 2,
+        name: 'Celular Motorolla MotoG5',
+        description: '2Gb Ram, 32Hd, Câmera 14mpx, Netflix',
+        value: 849.99,
+        serialCodes: [
+            1234567890,
+            9934534534
+        ]
+    })
+];
+exports.products_log = [
+    new product_log_1.default({
+        id: 34,
+        productId: 1,
+        userId: 'josue',
+        date: new Date(),
+        productName: 'Notebook Dell',
+        serialCode: 3345435435,
+        productDescription: 'Dell, core i5, 16GB RAM',
+        productValue: 899.99
+    }),
+    new product_log_1.default({
+        id: 35,
+        productId: 1,
+        userId: 'manoelsouza',
+        date: new Date(),
+        productName: 'Notebook Dell',
+        serialCode: 3243434222,
+        productValue: 3999.89,
+        productDescription: 'Dell, core i5, 16GB RAM'
+    }),
+    new product_log_1.default({
+        id: 35,
+        productId: 2,
+        userId: 'josue',
+        date: new Date(),
+        productName: 'Celular Motorolla MotoG5',
+        serialCode: 89797973498,
+        productDescription: '2Gb Ram, 32Hd, Câmera 14mpx, Netflix',
+        productValue: 2899.99
+    })
+];
