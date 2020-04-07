@@ -4,7 +4,7 @@
         "@babel/typescript"
     ],
     "plugins": [
-        ["babel-plugin-module-resolver", {
+        ["module-resolver", {
             "root": ["./dist"],
             "alias": {
                 "adapters": "./dist/adapters",
