@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:babel": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "NODE_PATH=./src nodemon --watch \"src/\" --exec \"ts-node ./src/webserver/index.ts\" -e ts",
@@ -14,13 +13,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/cli": "^7.8.3",
-    "@babel/core": "^7.8.3",
-    "@babel/plugin-proposal-class-properties": "^7.8.3",
-    "@babel/plugin-transform-runtime": "^7.9.0",
-    "@babel/preset-env": "^7.8.3",
-    "@babel/preset-typescript": "^7.8.3",
-    "@babel/runtime": "^7.9.2",
     "@types/cors": "^2.8.6",
     "@types/express": "^4.17.3",
     "@types/jest": "^25.1.4",

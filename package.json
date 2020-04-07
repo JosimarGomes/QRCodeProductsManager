@@ -5,8 +5,8 @@
   "scripts": {
     "install-dependencies": "npm install && cd api && npm install && cd ../client && npm install",
     "dev": "concurrently \"cd api && npm run server\" \"cd client && npm run start\"",
-    "start": "cd api && npm run start:production",
-    "heroku-prebuild": "npm run install-dependencies && npm install tsc -g"
+    "start": "concurrently \"cd api && npm run start:production\" \"cd client && npm run start:production\"",
+    "build": "cd api && npm run build && cd ../client && npm run build"
   },
   "author": "Josimar Gomes",
   "license": "ISC",
