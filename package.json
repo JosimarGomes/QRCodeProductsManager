@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Product QRCode viewer application web",
   "scripts": {
-    "install-dependencies": "npm install && cd api && npm install && cd ../client && npm install && npm install babel-cli -S",
+    "install-dependencies": "npm install && cd api && npm install && npm install babel-cli -S && cd ../client && npm install",
     "dev": "concurrently \"cd api && npm run server\" \"cd client && npm run start\"",
     "start": "concurrently \"cd api && npm run start:production\" \"cd client && npm run start:production\"",
     "heroku-prebuild": "npm run install-dependencies"
