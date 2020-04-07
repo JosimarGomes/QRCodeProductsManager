@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build:babel": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
-    "build": "tsc",
+    "build": "npx tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "NODE_PATH=./src nodemon --watch \"src/\" --exec \"ts-node ./src/webserver/index.ts\" -e ts",
     "start:production": "NODE_PATH=./dist node dist/webserver/index.js"
