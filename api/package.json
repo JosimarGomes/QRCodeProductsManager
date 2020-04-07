@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
+    "build": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
     "tsc": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "NODE_PATH=./src nodemon --watch \"src/\" --exec \"ts-node ./src/webserver/index.ts\" -e ts",
