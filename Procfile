@@ -1,1 +1,1 @@
-web: npm run install-dependencies && npm run dev
+web: npm start
