@@ -7,4 +7,8 @@ app.use(compression());
 
 app.use(express.static(`${__dirname}/build`));
 
-app.listen(process.env.PORT || 8080);
+const port = process.env.PORT || 8080;
+
+app.listen(port, () => {
+    console.log("react in port ", port)
+});
