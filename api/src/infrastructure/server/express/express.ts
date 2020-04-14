@@ -10,23 +10,6 @@ import {
 import { RouteApp } from 'types';
 import ExpressHttpResponseAdapter from './express-http-response';
 
-
-const setHttpAdapters = (request: Request, response: Response,
-    handler: (request: HttpRequest, response: HttpResponse) => void) => {
-    
-    const httpRequest = new HttpRequest({
-        body: request.body,
-        params: request.params,
-        query: request.query,
-        headers: request.headers,
-    });
-
-    const expressResponseAdapter = new ExpressHttpResponseAdapter(response);
-    const httpResponse = new HttpResponse(expressResponseAdapter);
-
-    return handler(httpRequest, httpResponse)
-}
-
 export default class ExpressServer implements ServerInterface {
     public port: number;
 
@@ -93,3 +76,19 @@ export default class ExpressServer implements ServerInterface {
         });
     }
 };
+
+const setHttpAdapters = (request: Request, response: Response,
+    handler: (request: HttpRequest, response: HttpResponse) => void) => {
+    
+    const httpRequest = new HttpRequest({
+        body: request.body,
+        params: request.params,
+        query: request.query,
+        headers: request.headers,
+    });
+
+    const expressResponseAdapter = new ExpressHttpResponseAdapter(response);
+    const httpResponse = new HttpResponse(expressResponseAdapter);
+
+    return handler(httpRequest, httpResponse)
+}
