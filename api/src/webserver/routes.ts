@@ -20,12 +20,12 @@ const RoutesApp: RouteApp[] = [
     },
     {
         method: 'GET',
-        path: '/api/v1/products/:id',
+        path: '/api/v1/products/{id}',
         handler: productController.getById
     },
     {
         method: 'DELETE',
-        path: '/api/v1/products/:id',
+        path: '/api/v1/products/{id}',
         handler: productController.deleteById
     },
     {

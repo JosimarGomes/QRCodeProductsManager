@@ -1,7 +1,7 @@
 import { ObjectLiteral } from 'types';
 
 type httpRequest = {
-    body?: ObjectLiteral,
+    body?: ObjectLiteral | object | string | Buffer,
     params?: ObjectLiteral,
     query?: ObjectLiteral,
     headers: ObjectLiteral

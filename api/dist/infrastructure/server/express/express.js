@@ -17,17 +17,6 @@ const cors_1 = __importDefault(require("cors"));
 const morgan_1 = __importDefault(require("morgan"));
 const adapters_1 = require("adapters");
 const express_http_response_1 = __importDefault(require("./express-http-response"));
-const setHttpAdapters = (request, response, handler) => {
-    const httpRequest = new adapters_1.HttpRequest({
-        body: request.body,
-        params: request.params,
-        query: request.query,
-        headers: request.headers,
-    });
-    const expressResponseAdapter = new express_http_response_1.default(response);
-    const httpResponse = new adapters_1.HttpResponse(expressResponseAdapter);
-    return handler(httpRequest, httpResponse);
-};
 class ExpressServer {
     constructor(port, routes) {
         this.port = port;
@@ -83,3 +72,14 @@ class ExpressServer {
 }
 exports.default = ExpressServer;
 ;
+const setHttpAdapters = (request, response, handler) => {
+    const httpRequest = new adapters_1.HttpRequest({
+        body: request.body,
+        params: request.params,
+        query: request.query,
+        headers: request.headers,
+    });
+    const expressResponseAdapter = new express_http_response_1.default(response);
+    const httpResponse = new adapters_1.HttpResponse(expressResponseAdapter);
+    return handler(httpRequest, httpResponse);
+};
